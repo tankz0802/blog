@@ -35,8 +35,8 @@ func UploadAvatar(avatar_base64 *string) (string, error) {
 	b := &cos.BaseURL{BucketURL: u}
 	c := cos.NewClient(b, &http.Client{
 		Transport: &cos.AuthorizationTransport{
-			SecretID:  "AKIDTjrc7MwnshFXruLBgusJTMyIn2jB38D2",
-			SecretKey: "h6EAqFMCVXIlyva2Dk23nGxNVM5XiHZO",
+			SecretID:  "",
+			SecretKey: "",
 		},
 	})
 

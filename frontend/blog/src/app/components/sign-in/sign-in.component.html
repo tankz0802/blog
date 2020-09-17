@@ -1,0 +1,186 @@
+<div class="container" [ngClass]="{ 'sign-up-mode': signUpMode }">
+  <div class="forms-container">
+    <div
+      class="signin-signup"
+      [@formAnimation]="signUpMode ? 'signup' : 'signin'"
+    >
+      <form
+        [formGroup]="signInFormGroup"
+        class="sign-in-form"
+        *ngIf="!signUpFormFlag"
+      >
+        <h2>Sign in</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            placeholder="Username"
+            [(ngModel)]="signInData.username"
+            formControlName="username"
+            name="username"
+          />
+        </div>
+        <div
+          *ngIf="signInFormErrorMsg.username"
+          class="alert showerr"
+          [innerHtml]="signInFormErrorMsg.username"
+        ></div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            placeholder="Password"
+            [(ngModel)]="signInData.password"
+            formControlName="password"
+            name="password"
+          />
+        </div>
+        <div
+          *ngIf="signInFormErrorMsg.password"
+          class="alert showerr"
+          [innerHtml]="signInFormErrorMsg.password"
+        ></div>
+        <input
+          type="button"
+          class="btn btn-sign-in"
+          value="sign in"
+          (click)="signIn()"
+        />
+        <p class="social-text">Or Sign in with social platforms</p>
+        <div class="social-media">
+          <a class="media-icon">
+            <i class="fab fa-weixin"></i>
+          </a>
+          <a class="media-icon">
+            <i class="fab fa-google"></i>
+          </a>
+          <a class="media-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="media-icon">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+      </form>
+
+      <form
+        [formGroup]="signUpFormGroup"
+        class="sign-up-form"
+        *ngIf="signUpFormFlag"
+      >
+        <h2>Sign up</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            placeholder="Username"
+            [(ngModel)]="signUpData.username"
+            name="username"
+            formControlName="username"
+          />
+        </div>
+        <div
+          *ngIf="signUpFormErrorMsg.username"
+          class="alert showerr"
+          [innerHtml]="signUpFormErrorMsg.username"
+        ></div>
+        <div class="input-field">
+          <i class="fas fa-phone"></i>
+          <input
+            type="text"
+            placeholder="Phone Number"
+            [(ngModel)]="signUpData.tel"
+            formControlName="tel"
+            name="tel"
+          />
+        </div>
+        <div
+          *ngIf="signUpFormErrorMsg.tel"
+          class="alert showerr"
+          [innerHtml]="signUpFormErrorMsg.tel"
+        ></div>
+        <div class="input-field">
+          <i class="fa fa-envelope" aria-hnameden="true"></i>
+          <input
+            type="text"
+            placeholder="Email"
+            [(ngModel)]="signUpData.email"
+            formControlName="email"
+            name="email"
+          />
+        </div>
+        <div
+          *ngIf="signUpFormErrorMsg.email"
+          class="alert showerr"
+          [innerHtml]="signUpFormErrorMsg.email"
+        ></div>
+        <div class="input-field">
+          <i class="fa fa-lock" aria-hnameden="true"></i>
+          <input
+            type="password"
+            placeholder="Password"
+            [(ngModel)]="signUpData.password"
+            name="password"
+            formControlName="password"
+          />
+        </div>
+        <div
+          *ngIf="signUpFormErrorMsg.password"
+          class="alert showerr"
+          [innerHtml]="signUpFormErrorMsg.password"
+        ></div>
+        <input
+          type="button"
+          class="btn btn-sign-up"
+          value="sign up"
+          (click)="signUp()"
+        />
+        <p class="social-text">Or Sign up with social platforms</p>
+        <div class="social-media">
+          <a class="media-icon">
+            <i class="fab fa-weixin"></i>
+          </a>
+          <a class="media-icon">
+            <i class="fab fa-google"></i>
+          </a>
+          <a class="media-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="media-icon">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="panels-container">
+    <div
+      class="panel left-panel"
+      [@leftPanelAnimation]="panelFlag ? 'signup' : 'signin'"
+    >
+      <div class="content">
+        <h2>New here ?</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex
+          ratione. Aliquname!
+        </p>
+        <button (click)="onSignUpFormAnimStart()">sign up</button>
+      </div>
+      <img src="assets/img/log.svg" alt="" class="image" />
+    </div>
+    <div
+      class="panel right-panel"
+      [@rightPanelAnimation]="panelFlag ? 'signup' : 'signin'"
+    >
+      <div class="content">
+        <h2>One of us ?</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          laboriosam ad deleniti.
+        </p>
+        <button (click)="onSignUpFormAnimStart()">sign in</button>
+      </div>
+      <img src="assets/img/register.svg" alt="" class="image" />
+    </div>
+  </div>
+</div>

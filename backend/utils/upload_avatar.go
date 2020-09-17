@@ -35,8 +35,8 @@ func UploadAvatar(avatar_base64 *string) (string, error) {
 	b := &cos.BaseURL{BucketURL: u}
 	c := cos.NewClient(b, &http.Client{
 		Transport: &cos.AuthorizationTransport{
-			SecretID:  "",
-			SecretKey: "",
+			SecretID:  "AKIDTjrc7MwnshFXruLBgusJTMyIn2jB38D2",
+			SecretKey: "h6EAqFMCVXIlyva2Dk23nGxNVM5XiHZO",
 		},
 	})
 
@@ -47,8 +47,6 @@ func UploadAvatar(avatar_base64 *string) (string, error) {
 	_, err = c.Object.PutFromFile(context.Background(), name, fillPath, nil)
 	if err != nil {
 		log.Println(err)
-
-
 		return "", err
 	}
 	return "https://blog-1301138214.cos.ap-guangzhou.myqcloud.com/"+name, nil

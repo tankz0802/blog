@@ -132,3 +132,8 @@ time="2020-08-30T00:47:47+08:00" level=info client_ip=127.0.0.1 latency_time="99
 time="2020-08-30T00:49:20+08:00" level=info client_ip=127.0.0.1 latency_time=0s req_method=PUT req_uri=/api/v1/user/1 status_code=400
 time="2020-08-30T00:49:56+08:00" level=info client_ip=127.0.0.1 latency_time=0s req_method=DELETE req_uri=/api/v1/user/2 status_code=400
 time="2020-08-30T00:50:03+08:00" level=info client_ip=127.0.0.1 latency_time=52.9083ms req_method=DELETE req_uri=/api/v1/user/2 status_code=200
+time="2020-09-17T14:38:08+08:00" level=info client_ip=127.0.0.1 latency_time=0s req_method=POST req_uri=/login status_code=404
+time="2020-09-17T14:43:27+08:00" level=info client_ip=127.0.0.1 latency_time=0s req_method=POST req_uri=/v1/login status_code=404
+time="2020-09-17T14:46:34+08:00" level=info client_ip=127.0.0.1 latency_time=353.5727ms req_method=POST req_uri=/api/v1/login status_code=200
+time="2020-09-17T14:47:32+08:00" level=info client_ip=127.0.0.1 latency_time=132.5881ms req_method=POST req_uri=/api/v1/login status_code=200
+time="2020-09-17T14:48:19+08:00" level=info client_ip=127.0.0.1 latency_time=3.0325ms req_method=POST req_uri=/api/v1/register status_code=403
